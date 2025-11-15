@@ -5,804 +5,267 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amit Kr Eshore | Young Economist & Data Scientist</title>
     <style>
-        :root {
-            --primary: #4285F4;
-            --secondary: #34A853;
-            --dark: #202124;
-            --light: #f8f9fa;
-            --gray: #5f6368;
-        }
-        
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        
-        /* Enhanced Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 100px 0;
-            text-align: center;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .welcome-message {
-            margin-bottom: 2rem;
-            overflow: hidden;
-        }
-        
-        .welcome-text {
-            font-size: 3.5rem;
-            margin-bottom: 0;
-            background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .typewriter {
-            border-right: 3px solid #4285F4;
-            white-space: nowrap;
-            overflow: hidden;
-            display: inline-block;
-            animation: 
-                typing 3.5s steps(40, end),
-                blink-caret .75s step-end infinite;
-        }
-        
-        .typewriter-text {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin: 0;
-            display: inline;
-        }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto 30px;
-            animation: fadeIn 2s ease-out;
-        }
-        
-        /* Animation Keyframes */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #4285F4; }
-        }
-        
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            animation: pulse 2s infinite;
-        }
-        
-        .btn:hover {
-            background-color: #3367d6;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.7);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 10px rgba(66, 133, 244, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(66, 133, 244, 0);
-            }
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.2rem;
-            color: var(--dark);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-img {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .skills {
-            margin-top: 30px;
-        }
-        
-        .skill-item {
-            margin-bottom: 20px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-        
-        .skill-bar {
-            height: 10px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background-color: var(--primary);
-            border-radius: 5px;
-            transition: width 1.5s ease-out;
-        }
-        
-        /* Services/Expertise Section */
-        .expertise {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .expertise-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-        }
-        
-        .expertise-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .expertise-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .expertise-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Projects Section */
-        .projects {
-            padding: 80px 0;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .project-card {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .project-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-        
-        .project-info {
-            padding: 25px;
-            background-color: white;
-        }
-        
-        .project-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        
-        .project-tag {
-            background-color: #e0e0e0;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-        <!--...--> Tag
-        /* Publications Section */
-        .publications {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .pub-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-        }
-        
-        .pub-table th, .pub-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .pub-table th {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .pub-table tr:hover {
-            background-color: rgba(66, 133, 244, 0.1);
-        }
-        
-        .pub-link {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .pub-link:hover {
-            color: var(--secondary);
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .contact-item i {
-            margin-right: 15px;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: var(--primary);
-            outline: none;
-        }
-        
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-            }
-            
-            nav ul li {
-                margin-left: 15px;
-                margin-right: 15px;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .welcome-text {
-                font-size: 2.5rem;
-            }
-            
-            .typewriter-text {
-                font-size: 1.8rem;
-            }
-            
-            .hero {
-                padding: 80px 0;
-                min-height: auto;
-            }
+        :root{
+            --bg:#0f1724; /* deep navy */
+            --card:#0b1220;
+            --muted:#9aa4b2;
+            --accent:#4f9cf9;
+            --accent-2:#34d399;
+            --glass: rgba(255,255,255,0.04);
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family: Inter, Roboto, system-ui, -apple-system, 'Segoe UI', Arial;
+            color:#e6eef8;
+            background: linear-gradient(180deg,var(--bg), #07101a 80%);
+            -webkit-font-smoothing:antialiased;
+        }
+        .container{max-width:1100px;margin:0 auto;padding:30px}
+        header{position:sticky;top:0;backdrop-filter: blur(6px);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+        .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+        .logo{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.05rem}
+        nav ul{display:flex;gap:18px;margin:0;padding:0;list-style:none}
+        nav a{color:var(--muted);text-decoration:none;font-weight:600}
+        nav a:hover{color:var(--accent)}
+
+        /* Hero */
+        .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;padding:60px 0}
+        .hero-left h1{font-size:2.2rem;margin:0 0 12px;color:#fff}
+        .subtitle{color:var(--muted);margin-bottom:18px;max-width:62ch}
+        .cta-row{display:flex;gap:12px;align-items:center}
+        .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:10px 16px;border-radius:8px;color:#07101a;font-weight:700;cursor:pointer}
+        .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+        .typewriter{font-weight:600;color:var(--accent);display:inline-block}
+
+        .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+        .hero-card h4{margin:0 0 8px;color:#dbeafe}
+        .hero-card p{margin:0;color:var(--muted);font-size:0.95rem}
+
+        /* Sections */
+        section{padding:48px 0}
+        .section-title{font-size:1.25rem;margin:0 0 18px;color:#e6f0ff}
+
+        /* Grid */
+        .grid{display:grid;gap:18px}
+        .expertise-grid{grid-template-columns:repeat(2,1fr)}
+        .card{background:var(--card);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+        .card h3{margin:0 0 8px}
+        .card p{margin:0;color:var(--muted)}
+
+        /* Projects */
+        .projects-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+        .project-img{height:140px;overflow:hidden;border-radius:8px;margin-bottom:12px}
+        .project-img img{width:100%;height:100%;object-fit:cover;display:block}
+        .project-actions{display:flex;gap:8px;margin-top:12px}
+        .project-actions a{display:inline-flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;text-decoration:none;background:rgba(255,255,255,0.02);color:var(--muted);font-weight:600}
+        .project-actions a:hover{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#07101a}
+
+        /* Contact */
+        .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:22px}
+        .contact-card{padding:18px}
+        .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:10px}
+
+        /* Modal */
+        .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;align-items:center;justify-content:center;z-index:9999}
+        .modal{background:#071426;padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);max-width:420px;width:90%;text-align:center}
+        .modal h4{margin:0 0 8px}
+        .modal p{color:var(--muted);margin:0 0 16px}
+        .modal .close{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+        footer{padding:30px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
+
+        @media (max-width:980px){
+            .hero{grid-template-columns:1fr}
+            .contact-grid{grid-template-columns:1fr}
+            .expertise-grid{grid-template-columns:1fr}
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">Amit Kr <span>Eshore</span></a>
+        <div class="container nav">
+            <a class="logo" href="#">Amit Kr Eshore</a>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#expertise">Expertise</a></li>
-                    <li><a href="#projects">Projects</a></li> 
-                    <!--<li><a href="#publications">Publications</a></li>-->
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Animations -->
-    <section class="hero">
-        <div class="container">
-            <div class="welcome-message">
-                <h1 class="welcome-text">Hi!! Welcome to Amit's Personal Website</h1>
-                <div class="typewriter">
-                    <h2 class="typewriter-text"> Aspiring Data Scientist||| (Site Work in Progress) </h2>
+    <main class="container">
+        <section class="hero">
+            <div class="hero-left">
+                <h1>Hi — I’m Amit. I build models that explain and predict economies.</h1>
+                <div class="subtitle">Graduate student in economics, combining structural econometrics with data science to analyze policy and forecasting problems. <span class="typewriter">Economist • Data Scientist • Researcher</span></div>
+                <div class="cta-row">
+                    <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in touch</button>
+                    <a class="btn ghost" href="#projects">See projects</a>
                 </div>
             </div>
-            
-            <p class="hero-description">I specialize in applying advanced econometric methods and machine learning techniques to analyze economic trends, evaluate policies, and build predictive models. My interdisciplinary approach combines rigorous economic theory with cutting-edge data science tools.</p>
-            <a href="#contact" class="btn">Get In Touch</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Amit Kr Eshore">
-                </div>
-                <div class="about-text">
-                    <h3>M.Sc in Economics from RBI institute: Indira Gandhi Institute of Development Research, Mumbai</h3>
-                    <p>I specialize in applying advanced econometric methods and machine learning techniques to analyze economic trends, evaluate policies, and build predictive models. My interdisciplinary approach combines rigorous economic theory with cutting-edge data science tools.</p>
-                    <p>Currently Assisting Prof. Saikat Ali sinhaa , Head of Buisness Analytics,Indian Institute of Management Kashipur. </p>
-                    
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Econometrics</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Python/R</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Machine Learning</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Natural Language Processing</span>
-                                <span>60%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 60%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero-card">
+                <h4>Quick snapshot</h4>
+                <p>IGIDR — MSc Economics · Python, R, Econometrics, ML · Research assistant experience.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="expertise">
-        <div class="container">
-            <h2 class="section-title">Areas of Expertise</h2>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <i class="fas fa-chart-line"></i>
+        <section id="about">
+            <h2 class="section-title">About me</h2>
+            <div class="card">
+                <p>I specialize in applied econometrics, forecasting and causal inference. I tackle problems using both theory-driven structural models and data-driven machine learning where appropriate.</p>
+            </div>
+        </section>
+
+        <section id="expertise">
+            <h2 class="section-title">Areas of expertise</h2>
+            <div class="grid expertise-grid">
+                <div class="card">
                     <h3>Economic Modeling</h3>
-                    <p>Development and estimation of structural economic models using advanced econometric techniques including time series analysis and panel data methods.</p>
+                    <p>Structural and reduced-form estimation, DSGE calibration, and policy counterfactuals.</p>
                 </div>
-                <div class="expertise-card">
-                    <i class="fas fa-robot"></i>
+                <div class="card">
                     <h3>Machine Learning</h3>
-                    <p>Application of supervised and unsupervised learning algorithms for economic forecasting, and predictive analytics.</p>
+                    <p>Supervised learning, ensembles, and interpretability methods for forecasting.</p>
                 </div>
-                <div class="expertise-card">
-                    <i class="fas fa-database"></i>
-                    <h3>Natural Language Processing</h3>
-                    <p>Processing and analyzing large texual data for sentiment analysis. Also I have knowledge of BERT and other similiar model.</p>
+                <div class="card">
+                    <h3>NLP & Text</h3>
+                    <p>Topic modelling, sentiment extraction, and transformer-based pipelines for policy text.</p>
                 </div>
-                <div class="expertise-card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>Policy Evaluation</h3>
-                    <p>Causal inference methods (RCTs, difference-in-differences, instrumental variables) to assess program effectiveness.</p>
+                <div class="card">
+                    <h3>Causal Inference</h3>
+                    <p>DiD, IV, RDD and experiment design for program evaluation.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://economictimes.indiatimes.com/thumb/msid-92683939,width-1200,height-900,resizemode-4,imgsize-42252/default.jpg?from=mdr">
-                    </div>
-                    <div class="project-info">
-                        <h3> Probability of Default of a loan</h3>
-                        <p>Using Logistic Regression find out the probability of default of a loan applicant. Used SMOTE technique to make the dataset balanced.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Jupyter Notebook</span>
-                            <span class="project-tag">Econometric Modelling</span>
-                        </div>
-                        <a href="https://drive.google.com/file/d/1tO9qro3HL-SUGJafYkkSZG_6koT9-QBA/view?usp=drive_link" class="btn">View Project</a>
+        <section id="projects">
+            <h2 class="section-title">Featured projects</h2>
+            <div class="grid projects-grid">
+                <div class="card">
+                    <div class="project-img"><img src="https://economictimes.indiatimes.com/thumb/msid-92683939,width-1200,height-900,resizemode-4,imgsize-42252/default.jpg?from=mdr" alt="Probability of Default"></div>
+                    <h3>Probability of Default of a Loan</h3>
+                    <p>Logistic regression with class-balance adjustments and feature engineering for credit risk.</p>
+                    <div class="project-actions">
+                        <a href="https://drive.google.com/file/d/1tO9qro3HL-SUGJafYkkSZG_6koT9-QBA/view?usp=drive_link" target="_blank" rel="noopener">View Project</a>
+                        <a href="https://github.com/AmitKr-GitsHub" target="_blank" rel="noopener">Source</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Inflation Prediction">
-                    </div>
-                    <div class="project-info">
-                        <h3>Inflation Prediction Model</h3>
-                        <p>Machine learning ensemble achieving 89% accuracy in 6-month inflation forecasts using alternative data sources.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">R</span>
-                            <span class="project-tag">Forecasting</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
+                <div class="card">
+                    <div class="project-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Inflation Prediction"></div>
+                    <h3>Inflation Prediction Model</h3>
+                    <p>Ensemble models using alternative data to improve medium-term inflation forecasts.</p>
+                    <div class="project-actions">
+                        <a href="#" target="_blank" rel="noopener">View Project</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Trade Network">
-                    </div>
-                    <div class="project-info">
-                        <h3>Global Trade Network Analysis</h3>
-                        <p>Network theory application to identify systemic risks and key players in international trade relationships.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Network Analysis</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Gephi</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
+                <div class="card">
+                    <div class="project-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Global Trade Network"></div>
+                    <h3>Global Trade Network Analysis</h3>
+                    <p>Network-analysis to identify systemic trade risks and central actors in global flows.</p>
+                    <div class="project-actions">
+                        <a href="#" target="_blank" rel="noopener">View Project</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-  <!--
-    Publications Section
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Recent Publications</h2>
-            <table class="pub-table">
-                <thead>
-                    <tr>
-                        <th>Year</th>
-                        <th>Title</th>
-                        <th>Journal</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2023</td>
-                        <td>Machine Learning Approaches to Nowcasting Economic Activity</td>
-                        <td>Journal of Applied Econometrics</td>
-                        <td><a href="#" class="pub-link">Read</a></td>
-                    </tr>
-                    <tr>
-                        <td>2022</td>
-                        <td>Alternative Data in Macroeconomic Forecasting: A Large-Scale Evaluation</td>
-                        <td>Review of Economics and Statistics</td>
-                        <td><a href="#" class="pub-link">Read</a></td>
-                    </tr>
-                    <tr>
-                        <td>2021</td>
-                        <td>Network Effects in International Trade: A Graph-Based Approach</td>
-                        <td>American Economic Review</td>
-                        <td><a href="#" class="pub-link">Read</a></td>
-                    </tr>
-                    <tr>
-                        <td>2020</td>
-                        <td>Heterogeneous Impacts of Minimum Wage Policies: A Machine Learning Analysis</td>
-                        <td>Journal of Labor Economics</td>
-                        <td><a href="#" class="pub-link">Read</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-    -->
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
             <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>send2amitkr@gmail.com</span>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Mumbai, Maharastra</span>
-                        </div>
-                    </div>
-                    <h3>Follow Me</h3>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/amitkrlinked/"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://github.com/AmitKr-GitsHub"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-google-scholar"></i></a>
+                <div class="contact-card card">
+                    <h3>Contact information</h3>
+                    <p class="subtitle">Email: <strong>send2amitkr@gmail.com</strong></p>
+                    <p class="subtitle">Location: Mumbai, Maharashtra</p>
+                    <div style="margin-top:12px">
+                        <a href="https://www.linkedin.com/in/amitkrlinked/" target="_blank" rel="noopener" class="project-actions">LinkedIn</a>
+                        <a href="https://github.com/AmitKr-GitsHub" target="_blank" rel="noopener" class="project-actions">GitHub</a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="_replyto" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <input type="hidden" name="_subject" value="New Contact Form Submission">
-                        <button type="submit" class="btn">Send Message</button>
+
+                <div class="contact-form card">
+                    <form id="contactForm" action="https://formspree.io/f/mblqkowd" method="POST">
+                        <input type="text" name="name" placeholder="Your name" required>
+                        <input type="email" name="_replyto" placeholder="Your email" required>
+                        <textarea name="message" placeholder="Your message" required></textarea>
+                        <input type="hidden" name="_subject" value="New message from website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div style="display:flex;gap:10px">
+                            <button type="submit" class="btn">Send message</button>
+                            <button type="reset" class="btn ghost">Reset</button>
+                        </div>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> Amit Kr Eshore. All rights reserved.</p>
-        </div>
+        <div class="container">&copy; <script>document.write(new Date().getFullYear())</script> Amit Kr Eshore — All rights reserved.</div>
     </footer>
 
+    <!-- Success / Error Modal -->
+    <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal" role="document">
+            <h4 id="modalTitle">Message sent</h4>
+            <p id="modalMessage">Thanks — I will get back to you shortly.</p>
+            <button id="modalClose" class="close">Close</button>
+        </div>
+    </div>
+
     <script>
-        // Animate skill bars on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            
-            const animateSkills = () => {
-                skillBars.forEach(bar => {
-                    const width = bar.style.width;
-                    bar.style.width = '0';
-                    setTimeout(() => {
-                        bar.style.width = width;
-                    }, 100);
+        // Ensure all project links open in new tab (extra safety)
+        document.addEventListener('DOMContentLoaded', function(){
+            document.querySelectorAll('#projects a').forEach(a=>{ a.setAttribute('target','_blank'); a.setAttribute('rel','noopener'); });
+        });
+
+        // Modal helpers
+        const backdrop = document.getElementById('modalBackdrop');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const modalClose = document.getElementById('modalClose');
+        function showModal(title,msg){
+            modalTitle.textContent = title;
+            modalMessage.textContent = msg;
+            backdrop.style.display = 'flex';
+            backdrop.setAttribute('aria-hidden','false');
+        }
+        function hideModal(){
+            backdrop.style.display = 'none';
+            backdrop.setAttribute('aria-hidden','true');
+        }
+        modalClose.addEventListener('click', hideModal);
+        backdrop.addEventListener('click', function(e){ if(e.target===backdrop) hideModal(); });
+
+        // AJAX form submit to Formspree to show immediate success/failure
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', async function(e){
+            e.preventDefault();
+            const url = form.getAttribute('action');
+            const data = new FormData(form);
+            try{
+                const res = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: data
                 });
-            };
-            
-            // Trigger on page load
-            animateSkills();
-            
-            // Trigger again when skills section is scrolled to
-            window.addEventListener('scroll', function() {
-                const skillsSection = document.querySelector('.skills');
-                const sectionPosition = skillsSection.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if(sectionPosition < screenPosition) {
-                    animateSkills();
+                if(res.ok){
+                    showModal('Message sent', 'Thanks — I will get back to you shortly.');
+                    form.reset();
+                } else {
+                    const json = await res.json().catch(()=>null);
+                    const err = (json && json.error) ? json.error : 'There was an error sending your message. Try again later.';
+                    showModal('Send failed', err);
                 }
-            });
+            }catch(err){
+                showModal('Send failed', 'Network error — please check your connection and try again.');
+            }
         });
     </script>
 </body>
