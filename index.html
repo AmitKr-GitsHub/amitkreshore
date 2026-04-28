@@ -28,15 +28,21 @@
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
     .name{font-weight:700;color:var(--accent);margin-bottom:6px}
     .role{font-size:0.95rem;color:var(--muted);margin-bottom:12px}
-    .sidebar p{margin:0 0 10px}
+    .sidebar p{margin:0 0 10px; line-height: 1.5;}
+    .sidebar a{color: var(--accent); text-decoration: none;}
     .stat-grid{display:flex;gap:10px;margin-top:12px}
     .stat{flex:1;background:rgba(255,255,255,0.02);padding:8px;border-radius:8px;text-align:center}
-    .stat strong{display:block;color:#fff}
+    .stat strong{display:block;color:var(--accent)}
 
     /* content card */
     .card{background:var(--card);padding:18px;border-radius:10px;border:1px solid var(--glass)}
-    h1,h2,h3{margin:0 0 12px}
+    h1,h2,h3{margin:0 0 12px; color: var(--accent);}
     p{margin:0 0 10px}
+
+    /* buttons */
+    .btn{display:inline-block; padding:10px 16px; background:var(--accent); color:#fff; text-decoration:none; border-radius:8px; font-weight:600; border:none; cursor:pointer;}
+    .btn.ghost{background:transparent; border:1px solid var(--accent); color:var(--accent);}
+    .btn:hover{opacity:0.9;}
 
     /* education/experience lists */
     .list{display:grid;gap:12px}
@@ -45,17 +51,18 @@
 
     /* projects */
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .project-card{border-radius:8px;overflow:hidden}
+    .project-card{border-radius:8px;overflow:hidden; border:1px solid var(--glass);}
     .project-thumb{height:120px;background:#222}
-    .project-body{padding:12px;background:var(--card);border:1px solid var(--glass)}
+    .project-body{padding:12px;background:var(--card);}
     .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-    .tag{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-size:0.85rem}
+    .tag{background:rgba(255,255,255,0.03);padding:4px 8px;border-radius:6px;font-size:0.8rem; border:1px solid rgba(255,255,255,0.05)}
+    .project-link{color: var(--accent); text-decoration: none; font-weight: bold; font-size: 0.9rem;}
 
     /* skills */
     .skill{margin-bottom:10px}
-    .skill .label{display:flex;justify-content:space-between;font-size:0.95rem}
-    .bar{height:10px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden}
-    .bar-inner{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0}
+    .skill .label{display:flex;justify-content:space-between;font-size:0.95rem; margin-bottom: 4px;}
+    .bar{height:8px;background:rgba(255,255,255,0.06);border-radius:8px;overflow:hidden}
+    .bar-inner{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition: width 1s ease-in-out;}
 
     /* CTA */
     .cta-row{display:flex;gap:10px;margin-top:12px}
@@ -63,12 +70,14 @@
     /* modal */
     .modal-backdrop{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:999}
     .modal{background:var(--card);padding:18px;border-radius:10px;max-width:420px;width:90%;text-align:center;border:1px solid var(--glass)}
-    .close{margin-top:12px;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted)}
+    .close{margin-top:12px;padding:8px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted); cursor:pointer;}
 
     footer{text-align:center;padding:26px;color:var(--muted)}
-
     .embed-pdf{width:100%;height:820px;border:0;border-radius:8px;overflow:hidden}
 
+    /* Form Styles */
+    form input, form textarea {width: 100%; padding: 10px; margin-bottom: 10px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass); border-radius: 8px; color: #fff;}
+    form textarea {height: 100px; resize: none;}
   </style>
 </head>
 <body>
@@ -97,7 +106,7 @@
         <div class="avatar"><img src="https://igidr2.impmeet.com/wp-content/uploads/2025/09/140A-scaled.jpg" alt="Amit"></div>
         <div class="name">Amit Kr Eshore</div>
         <div class="role">MSc Economics — IGIDR | Data & Research</div>
-        <p class="muted">I build and estimate econometric and machine-learning models to study macro and micro buisness questions. I enjoy translating economic theory into empirically testable models and practical forecasting tools.</p>
+        <p class="muted"> Updated website: <a href="https://amitkr-gitshub.github.io/">amitkr-gitshub.github.io</a>. I build and estimate econometric and machine-learning models to study macro and micro business questions. I enjoy translating economic theory into empirically testable models and practical forecasting tools.</p>
 
         <div class="stat-grid">
           <div class="stat"><strong>IGIDR</strong><span class="muted">MSc Economics</span></div>
@@ -105,30 +114,26 @@
         </div>
 
         <div style="margin-top:12px">
-          <a href="#contact" onclick="navigate('contact');return false" class="btn">Contact</a>
+          <a href="#contact" onclick="navigate('contact');return false;" class="btn">Contact</a>
           <a href="https://drive.google.com/file/d/1h7MNruDgT7APhccchoaj3nmfFPI-TnkW/view?usp=sharing" target="_blank" class="btn ghost" style="margin-left:8px">Download CV</a>
         </div>
       </aside>
 
       <section id="content">
-        <!-- dynamic content injected here -->
-      </section>
+        </section>
     </div>
   </main>
 
   <footer>© <script>document.write(new Date().getFullYear())</script> Amit Kr Eshore</footer>
 
-  <!-- Modal -->
   <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
     <div class="modal"><h3 id="modalTitle">Message sent</h3><p id="modalMessage">Thanks — I will get back to you shortly.</p><button id="modalClose" class="close">Close</button></div>
   </div>
 
   <script>
-    // --- Data pulled from CV ---
-    // Source: uploaded CV file Baseline_off-campus.pdf. See attached file for full CV (used to populate sections). fileciteturn2file5
     const DATA = {
       brief: {
-        introTitle: "Hi, I’m Amit — economist & data scientist",
+        introTitle: `Hi, I’m Amit — economist & data scientist`,
         introText: `Graduate student (MSc Economics, IGIDR). I combine structural econometrics and machine learning for policy evaluation and forecasting. Research interests: macro forecasting, causal inference, and text analysis.`
       },
       education: [
@@ -144,7 +149,6 @@
       projects:[
         {title:"Probability of Default",desc:"Logistic regression + SMOTE for credit risk.",link:"https://drive.google.com/file/d/1tO9qro3HL-SUGJafYkkSZG_6koT9-QBA/view",tags:["Python","Econometrics"]},
         {title:"Inflation Prediction",desc:"Ensemble forecasting using alternative data.",link:"#",tags:["R","Forecasting"]},
-        {title:"Global Trade Network",desc:"Network analysis of trade flows.",link:"#",tags:["Network Analysis","Python"]},
         {title:"Global Trade Network",desc:"Network analysis of trade flows.",link:"#",tags:["Network Analysis","Python"]}
       ],
       skills:[
@@ -158,19 +162,29 @@
         {title:"Sports",details:"Volleyball, Table Tennis"},
         {title:"Music & Instruments",details:"Ukulele, Flute, Harmonium"}
       ],
-      // PDF rendering: by default we point to the uploaded resume file (Baseline_off-campus.pdf) which is included in your repository root when you deploy.
-      // If you prefer Google Drive preview, set driveFileId to your Drive file id and the page will use the Drive preview URL instead.
       driveFileId: '1h7MNruDgT7APhccchoaj3nmfFPI-TnkW',
       localPdfPath: '/Baseline_off-campus.pdf'
     };
 
-    // --- Routing / render logic ---
     const content = document.getElementById('content');
     function clearActive(){document.querySelectorAll('#mainNav a').forEach(a=>a.classList.remove('active'))}
     function navigate(route){location.hash = '#'+route;renderRoute(route)}
-    function renderRoute(route){clearActive();const navLink = document.querySelector(`#mainNav a[data-route="${route}"]`);if(navLink) navLink.classList.add('active');if(route==='education'){renderEducation();return}if(route==='experience'){renderExperience();return}if(route==='portfolio'){renderPortfolio();return}if(route==='extracurricular'){renderExtracurricular();return}if(route==='cv'){renderCV();return}if(route==='contact'){renderContact();return}renderHome();}
+    function renderRoute(route){
+      clearActive();
+      const navLink = document.querySelector(`#mainNav a[data-route="${route}"]`);
+      if(navLink) navLink.classList.add('active');
+      
+      switch(route) {
+        case 'education': renderEducation(); break;
+        case 'experience': renderExperience(); break;
+        case 'portfolio': renderPortfolio(); break;
+        case 'extracurricular': renderExtracurricular(); break;
+        case 'cv': renderCV(); break;
+        case 'contact': renderContact(); break;
+        default: renderHome();
+      }
+    }
 
-    // Home
     function renderHome(){
       content.innerHTML = `
         <div class="card">
@@ -181,9 +195,7 @@
             <button class="btn ghost" onclick="navigate('portfolio')">See portfolio</button>
           </div>
         </div>
-
         <div style="height:16px"></div>
-
         <div class="card">
           <h2>Quick statistics</h2>
           <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
@@ -204,21 +216,18 @@
       `;
     }
 
-    // Education
     function renderEducation(){
       content.innerHTML = '<div class="card"><h2>Education</h2><div class="list" id="educationList"></div></div>';
       const list = document.getElementById('educationList');
       DATA.education.forEach(e=>{const el = document.createElement('div');el.className='list-item';el.innerHTML=`<strong>${e.title}</strong><div class="muted">${e.inst} · ${e.period}</div><p>${e.details}</p>`;list.appendChild(el);});
     }
 
-    // Experience
     function renderExperience(){
       content.innerHTML = '<div class="card"><h2>Experience</h2><div class="list" id="experienceList"></div></div>';
       const list = document.getElementById('experienceList');
       DATA.experience.forEach(x=>{const el = document.createElement('div');el.className='list-item';el.innerHTML=`<strong>${x.title} — ${x.org}</strong><div class="muted">${x.period}</div><p>${x.details}</p>`;list.appendChild(el);});
     }
 
-    // Portfolio (projects + skills)
     function renderPortfolio(){
       content.innerHTML = `
         <div class="card"><h2>Projects</h2><div class="projects-grid" id="projectsGrid"></div></div>
@@ -226,68 +235,75 @@
         <div class="card"><h2>Skills</h2><div id="skillsList"></div></div>
       `;
       const pg = document.getElementById('projectsGrid');
-      DATA.projects.forEach(p=>{const d = document.createElement('div');d.className='project-card';d.innerHTML=`<div class="project-thumb"><img src="https://picsum.photos/seed/${encodeURIComponent(p.title)}/600/400" style="width:100%;height:100%;object-fit:cover" alt="${p.title}"></div><div class="project-body"><strong>${p.title}</strong><p class="muted">${p.desc}</p><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><div style="margin-top:10px"><a href="${p.link}" target="_blank" rel="noopener" class="project-link">Open</a></div></div>`;pg.appendChild(d);});
+      DATA.projects.forEach(p=>{const d = document.createElement('div');d.className='project-card';d.innerHTML=`<div class="project-thumb"><img src="https://picsum.photos/seed/${encodeURIComponent(p.title)}/600/400" style="width:100%;height:100%;object-fit:cover" alt="${p.title}"></div><div class="project-body"><strong>${p.title}</strong><p class="muted">${p.desc}</p><div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div><div style="margin-top:10px"><a href="${p.link}" target="_blank" rel="noopener" class="project-link">View Project →</a></div></div>`;pg.appendChild(d);});
       const skills = document.getElementById('skillsList');
       DATA.skills.forEach(s=>{const el = document.createElement('div');el.className='skill';el.innerHTML=`<div class="label"><span>${s.name}</span><span>${s.value}%</span></div><div class="bar"><div class="bar-inner" style="width:0%"></div></div>`;skills.appendChild(el);});
       setTimeout(()=>{document.querySelectorAll('.bar-inner').forEach((b,i)=>{b.style.width = DATA.skills[i].value+'%';});},120);
     }
 
-    // Extracurricular
     function renderExtracurricular(){
       content.innerHTML = '<div class="card"><h2>Extracurricular Activities</h2><div class="list" id="extraList"></div></div>';
       const list = document.getElementById('extraList');
       DATA.extracurricular.forEach(x=>{const el = document.createElement('div');el.className='list-item';el.innerHTML=`<strong>${x.title}</strong><p class="muted">${x.details}</p>`;list.appendChild(el);});
     }
 
-    // CV viewer (renders local PDF by default; can switch to Google Drive preview by setting DATA.driveFileId)
     function renderCV(){
       content.innerHTML = '<div class="card"><h2>Current CV</h2><p class="muted">Below is the current CV — you can download or view it here.</p><div style="height:12px"></div><div id="pdfContainer"></div></div>';
       const container = document.getElementById('pdfContainer');
-      let src='';
-      if(DATA.driveFileId){
-        src = `https://drive.google.com/file/d/${DATA.driveFileId}/preview`;
-      } else {
-        // local file in repo root (Baseline_off-campus.pdf). When you deploy, ensure this file is placed at the root of your GitHub Pages repo.
-        src = DATA.localPdfPath;
-      }
-      // embed using iframe (Works for Drive preview and direct PDF)
+      const src = DATA.driveFileId ? `https://drive.google.com/file/d/${DATA.driveFileId}/preview` : DATA.localPdfPath;
       container.innerHTML = `<iframe class="embed-pdf" src="${src}"></iframe>`;
     }
 
-    // Contact
     function renderContact(){
       content.innerHTML = `
         <div class="card"><h2>Contact</h2>
           <form id="contactForm" action="https://formspree.io/f/mblqkowd" method="POST">
             <input name="name" placeholder="Name" required>
-            <input name="_replyto" placeholder="Email" required>
+            <input name="_replyto" placeholder="Email" type="email" required>
             <textarea name="message" placeholder="Message" required></textarea>
-            <div style="display:flex;gap:8px"><button class="btn">Send</button><button type="button" class="btn ghost" onclick="renderRoute('home')">Cancel</button></div>
+            <div style="display:flex;gap:8px"><button class="btn">Send Message</button><button type="button" class="btn ghost" onclick="renderRoute('home')">Cancel</button></div>
           </form>
         </div>
       `;
       const f = document.getElementById('contactForm');
-      f.addEventListener('submit',async function(e){e.preventDefault();const data = new FormData(f);try{const res = await fetch(f.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});if(res.ok){showModal('Message sent','Thanks — I will get back to you.');f.reset();} else {showModal('Send failed','There was an error.');}}catch(err){showModal('Send failed','Network error — try again later.');}});
+      f.addEventListener('submit',async function(e){
+        e.preventDefault();
+        const data = new FormData(f);
+        try{
+          const res = await fetch(f.action,{method:'POST',body:data,headers:{'Accept':'application/json'}});
+          if(res.ok){showModal('Message sent','Thanks — I will get back to you shortly.');f.reset();} 
+          else {showModal('Send failed','There was an error.');}
+        }catch(err){showModal('Send failed','Network error — try again later.');}
+      });
     }
 
-    // --- modal helpers ---
     const modalBackdrop = document.getElementById('modalBackdrop');
     const modalClose = document.getElementById('modalClose');
     modalClose.addEventListener('click',()=>modalBackdrop.style.display='none');
     function showModal(t,m){document.getElementById('modalTitle').textContent=t;document.getElementById('modalMessage').textContent=m;modalBackdrop.style.display='flex';}
 
-    // theme toggle
     const themeToggle = document.getElementById('themeToggle');
-    function updateTheme(){const t = localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme', t==='light' ? 'light' : 'dark');themeToggle.textContent = t==='light' ? '☀️' : '🌙';}
-    themeToggle.addEventListener('click',()=>{const cur = localStorage.getItem('theme')||'dark';localStorage.setItem('theme',cur==='light'?'dark':'light');updateTheme();});
-    updateTheme();
+    function updateTheme(){
+      const t = localStorage.getItem('theme')||'dark';
+      document.documentElement.setAttribute('data-theme', t);
+      themeToggle.textContent = t === 'light' ? '☀️' : '🌙';
+    }
+    themeToggle.addEventListener('click',()=>{
+      const cur = localStorage.getItem('theme')||'dark';
+      localStorage.setItem('theme', cur === 'light' ? 'dark' : 'light');
+      updateTheme();
+    });
 
-    // init: navigate based on hash
-    function init(){const h = (location.hash||'#home').replace('#','');renderRoute(h);document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',function(e){e.preventDefault();const r=this.getAttribute('data-route');navigate(r);}));}
+    function init(){
+      updateTheme();
+      const h = (location.hash||'#home').replace('#','');
+      renderRoute(h);
+      document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',function(e){
+        e.preventDefault();
+        navigate(this.getAttribute('data-route'));
+      }));
+    }
     window.addEventListener('hashchange',()=>{renderRoute((location.hash||'#home').replace('#',''))});
-
-    // populate DATA from uploaded CV if available (lightweight auto-extract) — additional fields in Baseline_off-campus.pdf. fileciteturn2file5
-
     init();
   </script>
 </body>
